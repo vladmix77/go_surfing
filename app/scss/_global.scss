@@ -1,21 +1,28 @@
 body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 400;
 }
+a {
+  display: inline-block;
+  text-decoration: none;
+}
 .suptitle-left {
-  font-family: Fira Sans;
-  font-style: normal;
-  font-weight: normal;
   font-size: 22px;
   line-height: 32px;
-  /* or 145% */
-
-  text-align: right;
   letter-spacing: 7.33333px;
   text-transform: uppercase;
-
   color: #ffffff;
-
-  mix-blend-mode: normal;
   opacity: 0.5;
+  padding-left: 103px;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: #fff;
+    left: 0;
+    top: 50%;
+  }
 }
