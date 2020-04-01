@@ -7,6 +7,8 @@
 @import "global";
 
 .header {
+  position: relative;
+  height: 100vh;
 }
 .header__slider {
   &-item {
@@ -53,6 +55,14 @@
 }
 .slider-arrows__left {
   right: 125px;
+}
+.slider-dots {
+  position: absolute;
+  right: 80px;
+  bottom: 40px;
+  max-width: 920px;
+  width: 100%;
+  color: #fff;
 }
 
 @import "media";
