@@ -23,7 +23,7 @@ gulp.task("scss", function() {
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(
       autoprefixer({
-        cascade:false
+        cascade: false
       })
     )
     .pipe(rename({ suffix: ".min" }))
@@ -35,7 +35,11 @@ gulp.task("scss", function() {
 
 gulp.task("css", function() {
   return gulp
-    .src(["node_modules/normalize.css/normalize.css", "node_modules/slick-carousel/slick/slick.css"])
+    .src([
+      "node_modules/normalize.css/normalize.css",
+      "node_modules/slick-carousel/slick/slick.css",
+      "node_modules/animate.css/animate.css"
+    ])
     .pipe(concat("_libs.scss"))
     .pipe(gulp.dest("app/scss"))
     .pipe(browserSync.reload({ stream: true }));
@@ -92,11 +96,13 @@ gulp.task("watch", function() {
   gulp.watch("app/js/*.js", gulp.parallel("script"));
 });
 
+// task для удаления и экспортирования папки dist
 
-// task для удаления и экспортирования папки dist 
-
-gulp.task('build', gulp.series("clean", "export"));
+gulp.task("build", gulp.series("clean", "export"));
 
 // Запуск task css scss js browser-sync и watch (имя gulp)
 
-gulp.task("default", gulp.parallel("css", "scss", "js", "browser-sync", "watch"));
+gulp.task(
+  "default",
+  gulp.parallel("css", "scss", "js", "browser-sync", "watch")
+);
