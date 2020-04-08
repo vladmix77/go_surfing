@@ -26,7 +26,6 @@
   bottom: 116px;
   text-align: right;
   color: #fff;
-  text-transform: uppercase;
 }
 .slider-item__info-suptitle {
   margin-bottom: 5px;
@@ -85,6 +84,7 @@
   &__name {
     font-weight: 300;
     line-height: 19px;
+    text-transform: capitalize;
   }
 }
 .header__aside {
@@ -101,7 +101,6 @@
   font-weight: 800;
   font-size: 200px;
   line-height: 156px;
-  text-transform: uppercase;
   color: #ffffff;
   opacity: 0.07;
   max-width: 467px;
@@ -125,6 +124,7 @@
         text-align: center;
         padding-top: 6px;
         margin-bottom: 20px;
+        text-transform: capitalize;
       }
     }
   }
@@ -158,6 +158,7 @@
   letter-spacing: 1.05px;
   position: relative;
   padding-left: 19px;
+  text-transform: capitalize;
   &::before {
     content: "";
     position: absolute;
@@ -192,6 +193,9 @@
   }
 }
 
+.surf{
+  padding: 160px 0 210px;
+}
 
 
 
