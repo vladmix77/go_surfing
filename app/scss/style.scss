@@ -193,29 +193,24 @@
   }
 }
 
-.surf{
+.surf {
   padding: 160px 0 210px;
   background-image: url(../images/surf-bg.png);
   background-position: right 200px;
   background-repeat: no-repeat;
   background-size: auto;
 }
-.surf__subtitle{
+.surf__subtitle {
   text-align: right;
   padding-right: 80px;
   margin-top: -86px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.surf-box {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+}
 
 @import "media";
