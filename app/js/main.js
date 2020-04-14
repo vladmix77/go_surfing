@@ -14,4 +14,9 @@ $(function() {
     slidesToScroll: 4,
     asNavFor: ".header__slider"
   });
+
+  $(".surf-slider").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1
+  })
 });
