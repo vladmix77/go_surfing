@@ -221,9 +221,12 @@
       margin-top: 89px;
     }
   }
-  .slick-current{
-    .surf-box__inner-btn{
+  .slick-current {
+    .surf-box__inner-btn {
       display: block;
+    }
+    .surf-box__inner {
+      background: rgba(#1c2121, 0.3);
     }
   }
 }
@@ -236,6 +239,13 @@
     min-height: 750px;
     background: rgba(#1c2121, 0.85);
     position: relative;
+    transition: all 0.5s;
+    &:hover {
+      background: rgba(#1c2121, 0.3);
+      .surf-box__inner-btn {
+        display: block;
+      }
+    }
   }
 }
 
