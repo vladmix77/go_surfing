@@ -279,4 +279,64 @@
   display: none;
 }
 
+.slider-map {
+  max-width: 1200px;
+  min-height: 635px;
+  background-image: url(../images/world-map-dots.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  .slick-list {
+    min-height: 635px;
+  }
+}
+
+.slider-dots__circle {
+  width: 24px;
+  height: 24px;
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.slider-dots__content {
+  display: none;
+}
+
+.slider-dots {
+  position: relative;
+}
+
+.slider-dots--1 {
+  top: 330px;
+}
+.slider-dots--2 {
+  top: 294px;
+  left: -8px;
+}
+.slider-dots--3 {
+  top: 322px;
+  left: 30px;
+}
+.slider-dots--4 {
+  top: 496px;
+  left: -36px;
+}
+.slider-dots--5 {
+  top: 211px;
+  left: -65px;
+}
+.slider-dots--6 {
+  top: 556px;
+  left: -119px;
+}
+.slider-dots--7 {
+  top: 384px;
+  left: -97px;
+}
+.slider-dots--8 {
+  top: 497px;
+  left: 38px;
+}
+
 @import "media";
