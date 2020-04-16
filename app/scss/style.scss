@@ -290,6 +290,41 @@
   .slick-list {
     min-height: 635px;
   }
+  .slick-current {
+    .slider-dots__content {
+      display: block;
+      width: 285px;
+      padding: 28px 31px 31px 32px;
+    }
+  }
+}
+
+.slider-dots__content-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-dots__content-title {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 26px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    background-color: $green;
+    width: 80px;
+    height: 1px;
+    bottom: 0;
+     left: 0;
+  }
+}
+.slider-dots__content-subtitle {
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
 }
 
 .slider-dots__circle {
@@ -313,6 +348,19 @@
 .slider-dots--2 {
   top: 294px;
   left: -8px;
+  .slider-dots__circle {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/mini-marker.svg);
+      width: 14px;
+      height: 17px;
+      background-size: cover;
+      right: -15px;
+      top: -20px;
+    }
+  }
 }
 .slider-dots--3 {
   top: 322px;
