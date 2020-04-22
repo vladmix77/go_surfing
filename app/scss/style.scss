@@ -452,12 +452,16 @@
     background-position: top left;
     min-height: 780px;
   }
+  &__descr {
+    padding-left: 132px;
+    img {
+      padding-left: 31px;
+    }
+  }
+  &__subtitle {
+    text-align: right;
+    padding: 132px 80px 0 0;
+  }
 }
-
-
-
-
-
-
 
 @import "media";
