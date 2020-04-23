@@ -453,7 +453,11 @@
     min-height: 780px;
   }
   &__descr {
-    padding-left: 132px;
+    padding: 160px 0 0 132px;
+    min-height: 320px;
+    margin-top: -230px;
+    background-repeat: no-repeat;
+    background-position: right center;
     img {
       padding-left: 31px;
     }
@@ -462,6 +466,49 @@
     text-align: right;
     padding: 132px 80px 0 0;
   }
+  &__btn {
+    text-align: center;
+  }
+}
+.travel-slider__info {
+  display: flex;
+  justify-content: space-around;
+  &-subtitle {
+    position: absolute;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 8px;
+    opacity: 0.5;
+    transform: rotate(-90deg);
+    top: 97px;
+    left: -97px;
+    width: 200px;
+    height: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
+  &-title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 36px;
+    padding-left: 40px;
+    position: relative;
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: 5.25px;
+      opacity: 0.75;
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+    }
+  }
+}
+.travel-slider__info-item {
+  min-height: 200px;
+  margin-bottom: 58px;
+  position: relative;
 }
 
 @import "media";
