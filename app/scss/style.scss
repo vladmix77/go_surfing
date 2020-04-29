@@ -440,7 +440,7 @@
   }
 }
 
-.travel {
+.holder {
   background-image: url(../images/travel-bg.png);
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -450,7 +450,7 @@
   }
 }
 
-.travel-slider {
+.holder-slider {
   &__head {
     background-repeat: no-repeat;
     background-position: top left;
@@ -483,7 +483,7 @@
     text-align: center;
   }
 }
-.travel-slider__info {
+.holder-slider__info {
   display: flex;
   justify-content: space-around;
   &-subtitle {
@@ -518,7 +518,7 @@
     }
   }
 }
-.travel-slider__info-item {
+.holder-slider__info-item {
   min-height: 200px;
   margin-bottom: 58px;
   position: relative;

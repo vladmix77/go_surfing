@@ -33,7 +33,7 @@ $(function () {
     focusOnSelect: true,
   });
 
-  $(".travel__slider").slick({
+  $(".holder__slider").slick({
     infinite: true,
     fade: true,
     prevArrow:
