@@ -442,6 +442,9 @@
 
 .holder {
   background-image: url(../images/travel-bg.png);
+  &.sleep {
+    background-image: url(../images/frangipani.png);
+  }
   background-position: bottom right;
   background-repeat: no-repeat;
   .slider-arrows {
@@ -462,9 +465,13 @@
     margin-top: -230px;
     background-repeat: no-repeat;
     background-position: right center;
+    background-size: contain;
     .descr__head {
       position: relative;
-      padding-right: 215px;
+      padding-right: 68px;
+      &.descr__head-sleep {
+        padding-right: 215px;
+      }
       img {
         position: absolute;
         right: 0;
