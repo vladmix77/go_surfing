@@ -444,7 +444,7 @@
   background-image: url(../images/travel-bg.png);
   background-position: bottom right;
   background-repeat: no-repeat;
-  .slider-arrows{
+  .slider-arrows {
     top: 225px;
     opacity: 0.5;
   }
@@ -464,15 +464,24 @@
     background-position: right center;
     .descr__head {
       position: relative;
-      padding-right: 78px;
+      padding-right: 215px;
       img {
         position: absolute;
         right: 0;
         top: 0;
       }
-    }
-    img {
-      padding-left: 31px;
+      .holder__star-list {
+        position: absolute;
+        right: 0;
+        top: -5px;
+        li {
+          display: inline-block;
+          margin-left: -25px;
+        }
+        img {
+          position: static;
+        }
+      }
     }
   }
   &__subtitle {
