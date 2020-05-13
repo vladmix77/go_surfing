@@ -85,7 +85,7 @@ gulp.task("export", function() {
   let buildCss = gulp.src("app/css/**/*.css").pipe(gulp.dest("dist/css"));
   let buildJs = gulp.src("app/js/**/*.js").pipe(gulp.dest("dist/js"));
   let buildFonts = gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
-  let buildImg = gulp.src("app/img/**/*.*").pipe(gulp.dest("dist/img"));
+  let buildImg = gulp.src("app/images/**/*.*").pipe(gulp.dest("dist/images"));
 });
 
 // task - watch для отслеживания и сохранения изменений в scss и html и js
