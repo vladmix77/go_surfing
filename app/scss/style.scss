@@ -536,4 +536,43 @@
   position: relative;
 }
 
+// block - Shop (shop)
+
+.shop {
+  background-image: url(..//images/shop-bg.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  &__slider {
+    padding-left: 132px;
+  }
+}
+.shop__slider-inner{
+  display: flex;
+}
+.shop__slider-info{
+  max-width: 480px;
+  width: 100%;
+  margin-right: 40px;
+}
+.descr__head-shop {
+  max-width: 340px;
+  margin-bottom: 47px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import "media";
