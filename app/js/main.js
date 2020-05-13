@@ -33,7 +33,7 @@ $(function () {
     focusOnSelect: true,
   });
 
-  $(".holder__slider").slick({
+  $(".holder__slider, .shop__slider").slick({
     infinite: true,
     fade: true,
     prevArrow:
@@ -42,7 +42,7 @@ $(function () {
       '<img class="slider-arrows slider-arrows__right" src="images/arrows-right.svg" alt="" />',
   });
 
-  // --- (- and +) ---
+  // --- sleep (- and +) ---
 
   $(
     '<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="images/plus.svg" alt="" /></div><div class="quantity-button quantity-down"><img src="images/minus.svg" alt="" /></div></div>'
