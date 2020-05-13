@@ -546,33 +546,74 @@
     padding-left: 132px;
   }
 }
-.shop__slider-inner{
+.shop__slider-inner {
   display: flex;
 }
-.shop__slider-info{
+.shop__slider-info {
   max-width: 480px;
   width: 100%;
   margin-right: 40px;
+  padding-top: 156px;
 }
 .descr__head-shop {
   max-width: 340px;
   margin-bottom: 47px;
 }
+.shop__star-list {
+  margin-left: -9px;
+}
+.shop__slider-price {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 64px;
+  sup {
+    font-size: 18px;
+    padding-left: 2px;
+  }
+}
 
+.shop__slider-content {
+  padding-left: 170px;
+  display: flex;
+  align-items: flex-end;
+}
+.shop__extras {
+  padding-left: 150px;
+}
+.shop__extras-inner {
+  display: flex;
+}
+.shop__extras-title {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 25px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.shop__extras-box{
+text-align: center;
+margin-right: 57px;
+}
+.shop__extras-img{
+  min-height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.shop__extras-name{
+font-size: 18px;
+line-height: 22px;
+opacity: 0.5;
+letter-spacing: 8px;
+margin-bottom: 16px;
+}
+.shop__extras-price{
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 40px;
+}
 
 
 @import "media";
