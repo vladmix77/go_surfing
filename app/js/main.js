@@ -93,9 +93,9 @@ $(function () {
 
   $(".summ").html("$" + summ);
 
+// ---------------- кнопка .surfboard-box__circle (+ -)
 
-$(".surfboard-box__circle").on("click", function(){
-  $(this).toggleClass("minus")
-})
-
+  $(".surfboard-box__circle").on("click", function () {
+    $(this).toggleClass("active");
+  });
 });
