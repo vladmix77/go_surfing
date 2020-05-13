@@ -591,29 +591,67 @@
   margin-bottom: 25px;
 }
 
-.shop__extras-box{
-text-align: center;
-margin-right: 57px;
+.shop__extras-box {
+  text-align: center;
+  margin-right: 57px;
 }
-.shop__extras-img{
+.shop__extras-img {
   min-height: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 35px;
 }
-.shop__extras-name{
-font-size: 18px;
-line-height: 22px;
-opacity: 0.5;
-letter-spacing: 8px;
-margin-bottom: 16px;
+.shop__extras-name {
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 0.5;
+  letter-spacing: 8px;
+  margin-bottom: 16px;
 }
-.shop__extras-price{
+.shop__extras-price {
   font-weight: 800;
   font-size: 18px;
   line-height: 40px;
 }
+.surfboard {
+  position: relative;
+}
+.surfboard-box {
+  position: absolute;
+  top: 220px;
+  right: 15px;
+}
+.surfboard-box__circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
+  &.minus{
+
+  }
+}
+.circle-row {
+  background-color: $green;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  & + .circle-row{
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+
+
+
+
+
+
 
 
 @import "media";
