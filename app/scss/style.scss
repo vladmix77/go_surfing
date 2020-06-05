@@ -142,16 +142,16 @@
   z-index: 20;
   right: 20px;
   top: 75px;
-  background-color: rgba(255,255,255,0.1);
-  &__inner{
+  background-color: rgba(255, 255, 255, 0.1);
+  &__inner {
     width: 40px;
   }
   &__line {
     height: 5px;
     background-color: $green;
-  + .menu-btn__line{
-    margin-top: 5px;
-  }
+    + .menu-btn__line {
+      margin-top: 5px;
+    }
   }
 }
 
