@@ -131,16 +131,16 @@
 }
 
 .menu-btn {
+  display: none;
   width: 55px;
   height: 55px;
-  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   border: 1px solid #fff;
   position: absolute;
   z-index: 20;
-  right: 20px;
+  right: 25px;
   top: 75px;
   background-color: rgba(255, 255, 255, 0.1);
   &__inner {
