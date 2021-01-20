@@ -256,10 +256,11 @@
   }
 }
 .surf-box {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  &__wrapper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   &__inner {
     min-height: 750px;
     background: rgba(#1c2121, 0.85);

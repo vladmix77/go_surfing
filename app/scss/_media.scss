@@ -133,6 +133,14 @@
   }
 }
 
+// @media (max-width: 1102px) {
+//   .slider-dots__content {
+//     &::before {
+//       left: calc(50% - 0px);
+//     }
+//   }
+// }
+
 @media (max-width: 1040px) {
   .header__arrows {
     display: none;
@@ -206,6 +214,7 @@
     line-height: 18px;
   }
 }
+
 @media (max-width: 960px) {
   .slider-dotshead {
     display: none;
@@ -214,6 +223,7 @@
 
 @media (max-width: 767px) {
 }
+
 @media (max-width: 460px) {
   .header__aside {
     display: block;
