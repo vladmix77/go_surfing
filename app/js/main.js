@@ -24,6 +24,14 @@ $(function () {
     nextArrow:
       '<img class="slider-arrows slider-arrows__right" src="images/arrows-right.svg" alt="" />',
     asNavFor: ".slider-map",
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+    ]
   });
 
   $(".slider-map").slick({
