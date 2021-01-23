@@ -36,15 +36,35 @@ $(function () {
           slidesToShow: 3,
         }
       },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
     ]
   });
 
   $(".slider-map").slick({
-    slidesToShow: 3,
+    slidesToShow: 8,
     slidesToScroll: 1,
     arrows: false,
     asNavFor: ".surf-slider",
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1103,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+    ]
   });
 
   $(".holder__slider, .shop__slider").slick({
