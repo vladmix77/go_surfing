@@ -156,9 +156,18 @@
       overflow: hidden;
       min-height: 280px;
     }
-    .slick-track{
+    .slick-track {
       min-height: 280px;
     }
+  }
+  .slider-dots__content, .slider-dots--8 .slider-dots__content {
+    transform: translateX(0);
+    width: 285px;
+    padding: 28px 31px 0px 32px;
+  }
+ 
+  .slider-map .slick-current .slider-dots__content {
+    background: rgba(#ccc, 0.7);
   }
 }
 
