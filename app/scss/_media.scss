@@ -243,6 +243,9 @@
   .dots-box__name {
     line-height: 18px;
   }
+  .surf__subtitle {
+    padding-right: 20px;
+}
 }
 
 @media (max-width: 960px) {
@@ -252,10 +255,14 @@
 }
 
 @media (max-width: 900px) {
-  
+
 }
 
 @media (max-width: 767px) {
+}
+
+@media (max-width: 720px) {
+  
 }
 
 @media (max-width: 460px) {
