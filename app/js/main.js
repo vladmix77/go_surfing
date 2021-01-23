@@ -62,6 +62,7 @@ $(function () {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
+          centerMode: true,
         }
       },
     ]
