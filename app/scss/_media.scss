@@ -146,9 +146,12 @@
   .holder-slider__descr {
     padding: 160px 0 0 20px;
   }
+  .holder {
+    background-size: 250px;
+  }
   .surf,
   .holder {
-    padding: 70px 0 50px;
+    padding: 70px 0 90px;
   }
 }
 
@@ -298,6 +301,19 @@
       }
     }
   }
+  .quantity-button.quantity-up {
+    right: auto;
+    left: 25px;
+  }
+  .quantity-button.quantity-down {
+    right: auto;
+  }
+  .sleep .holder-slider__descr {
+    background-position: right 10px;
+  }
+  .holder-slider__info-title .holder-pricing__span {
+    left: 0;
+  }
 }
 
 @media (max-width: 960px) {
@@ -314,9 +330,9 @@
 
 @media (max-width: 720px) {
   .title span {
-      font-size: 87px;
-      padding-bottom: 78px;
-      padding-left: 10px;
+    font-size: 87px;
+    padding-bottom: 78px;
+    padding-left: 10px;
   }
   .surf-slider .slider-arrows {
     top: 20px;
@@ -384,7 +400,6 @@
     background-size: 120px;
   }
   .holder .title span {
-
     padding-left: 10px;
   }
 }
@@ -395,6 +410,20 @@
     display: block;
     width: 250px;
     padding: 28px 15px 0px;
+  }
+  .holder-slider__descr .descr__head .holder__star-list {
+    position: static;
+    margin-left: -15px;
+  }
+  .holder-slider__descr .descr__head.descr__head-sleep {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .holder,
+  .holder.sleep {
+    background-image: none;
   }
 }
 
