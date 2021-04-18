@@ -336,6 +336,11 @@
   .holder-slider__descr {
     background-image: none !important;
   }
+  .btn {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 800;
+  }
 }
 
 @media (max-width: 520px) {
@@ -376,7 +381,7 @@
     display: none;
   }
   .holder {
-    background-image: none;
+    background-size: 120px;
   }
   .holder .title span {
 
