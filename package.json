@@ -21,6 +21,7 @@
     "http-proxy": "^1.18.1",
     "jquery": "^3.6.0",
     "normalize.css": "^8.0.1",
+    "wow.js": "^1.2.2",
     "yargs-parser": "^20.2.1"
   },
   "dependencies": {

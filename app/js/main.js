@@ -16,9 +16,9 @@ $(function () {
     responsive: [
       {
         breakpoint: 961,
-        settings: "unslick"
+        settings: "unslick",
       },
-    ]
+    ],
   });
 
   $(".surf-slider").slick({
@@ -34,29 +34,29 @@ $(function () {
         breakpoint: 1210,
         settings: {
           slidesToShow: 3,
-        }
+        },
       },
       {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
-        }
+        },
       },
       {
         breakpoint: 720,
         settings: {
           slidesToShow: 1,
           centerMode: true,
-        }
+        },
       },
       {
         breakpoint: 426,
         settings: {
           slidesToShow: 1,
           centerMode: false,
-        }
+        },
       },
-    ]
+    ],
   });
 
   $(".slider-map").slick({
@@ -70,23 +70,23 @@ $(function () {
         breakpoint: 1103,
         settings: {
           slidesToShow: 3,
-        }
+        },
       },
       {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
           centerMode: true,
-        }
+        },
       },
       {
         breakpoint: 720,
         settings: {
           slidesToShow: 1,
           centerMode: true,
-        }
+        },
       },
-    ]
+    ],
   });
 
   $(".holder__slider, .shop__slider").slick({
@@ -155,6 +155,11 @@ $(function () {
     $(this).toggleClass("active");
   });
   $(".menu-btn").on("click", function () {
-    $(".menu").toggleClass("active")
+    $(".menu").toggleClass("active");
   });
+
+  // ------------------- wowjs animation
+
+  new WOW().init();
+  
 });
