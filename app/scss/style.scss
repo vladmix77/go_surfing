@@ -394,6 +394,7 @@
   position: absolute;
   bottom: 35px;
   transform: translateX(-50%);
+  z-index: 1;
   &::before {
     content: "";
     position: absolute;
@@ -414,7 +415,7 @@
 }
 
 .slider-dots--1 {
-  top: 330px;
+  top: 310px;
   .slider-dots__content {
     transform: translateX(0);
     &::before {
