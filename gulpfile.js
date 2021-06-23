@@ -1,111 +1,111 @@
-// Подключение gulp и gulp-scss и browser-sync...
+const { src, dest, watch, parallel, series } = require("gulp");
 
-let gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  browserSync = require("browser-sync"),
-  uglify = require("gulp-uglify"),
-  concat = require("gulp-concat"),
-  rename = require("gulp-rename"),
-  del = require("del"),
-  autoprefixer = require("gulp-autoprefixer");
+const scss = require("gulp-sass"); // перевод из scss, sass в css
+const concat = require("gulp-concat"); // объеденение строк, файлов
+const browserSync = require("browser-sync").create(); // вывод в браузер
+const uglify = require("gulp-uglify-es").default; // минификация(сжатие) js
+const autoprefixer = require("gulp-autoprefixer"); // сканирует css и вставляет префиксеры для совместимости с разными браузерами
+const imagemin = require("gulp-imagemin"); // сжимает фотографии
+const del = require("del"); // удаление папоки файлов
 
-// task для очистки файлов и папок (папки (dist)).
+// вывод в браузер
 
-gulp.task("clean", async function () {
-  del.sync("dist");
-});
-
-// task для scss и browserSync (компиляция в css и настройки (outputStyle) и переименование)
-
-gulp.task("scss", function () {
-  return gulp
-    .src("app/scss/**/*.scss")
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("app/css"))
-    .pipe(browserSync.reload({ stream: true }));
-});
-
-// task для normalize.css и.т.д. обьединение файлов concat
-
-gulp.task("css", function () {
-  return gulp
-    .src([
-      "node_modules/normalize.css/normalize.css",
-      "node_modules/slick-carousel/slick/slick.css",
-      "node_modules/animate.css/animate.css",
-    ])
-    .pipe(concat("_libs.scss"))
-    .pipe(gulp.dest("app/scss"))
-    .pipe(browserSync.reload({ stream: true }));
-});
-
-// task для browser-sync - html
-
-gulp.task("html", function () {
-  return gulp.src("app/*.html").pipe(browserSync.reload({ stream: true }));
-});
-
-// task для browser-sync - js
-
-gulp.task("script", function () {
-  return gulp.src("app/js/*.js").pipe(browserSync.reload({ stream: true }));
-});
-
-// task для всех файлов js и обьеденение (slik и jsmagnific-popup в lib.min.js)
-
-gulp.task("js", function () {
-  return gulp
-    .src([
-      "node_modules/slick-carousel/slick/slick.js",
-      "node_modules/wow.js/dist/wow.js",
-    ])
-    .pipe(concat("libs.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest("app/js"))
-    .pipe(browserSync.reload({ stream: true }));
-});
-
-// Live Server (Browser Reloading) синхронизация с browser-sync
-
-gulp.task("browser-sync", function () {
+function browsersync() {
   browserSync.init({
     server: {
       baseDir: "app/",
     },
   });
-});
+}
 
-// task - build для создания папки dist и переноса файлов
+// удаление папки dist
 
-gulp.task("export", function () {
-  let buildHtml = gulp.src("app/**/*.html").pipe(gulp.dest("dist"));
-  let buildCss = gulp.src("app/css/**/*.css").pipe(gulp.dest("dist/css"));
-  let buildJs = gulp.src("app/js/**/*.js").pipe(gulp.dest("dist/js"));
-  let buildFonts = gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
-  let buildImg = gulp.src("app/images/**/*.*").pipe(gulp.dest("dist/images"));
-});
+function clean() {
+  return del("dist");
+}
 
-// task - watch для отслеживания и сохранения изменений в scss и html и js
+// картинки берутся из папки images, сжимаются и копируются в папку dist/images
 
-gulp.task("watch", function () {
-  gulp.watch("app/scss/**/*.scss", gulp.parallel("scss"));
-  gulp.watch("app/*.html", gulp.parallel("html"));
-  gulp.watch("app/js/*.js", gulp.parallel("script"));
-});
+function images() {
+  return src("app/images/**/*")
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 75, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+        }),
+      ])
+    )
+    .pipe(dest("dist/images"));
+}
 
-// task для удаления и экспортирования папки dist
+// объединение и сжатие и сохранение в папку js и обновление страницы
 
-gulp.task("build", gulp.series("clean", "export"));
+function scripts() {
+  return src([
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/slick-carousel/slick/slick.js",
+    "node_modules/wow.js/dist/wow.js",
+    "app/js/main.js",
+  ])
+    .pipe(concat("main.min.js"))
+    .pipe(uglify())
+    .pipe(dest("app/js"))
+    .pipe(browserSync.stream());
+}
 
-// Запуск task css scss js browser-sync и watch (имя gulp)
+// все файлы scss сжимаются, объединяются и вставляются префиксы, а потом сохраняются в папку css и обновление страницы
 
-gulp.task(
-  "default",
-  gulp.parallel("css", "scss", "js", "browser-sync", "watch")
-);
+function styles() {
+  return src([
+    "node_modules/normalize.css/normalize.css",
+    "node_modules/slick-carousel/slick/slick.css",
+    "node_modules/animate.css/animate.css",
+    "app/scss/**/*.scss",
+  ])
+    .pipe(scss({ outputStyle: "expanded" }))
+    .pipe(concat("style.min.css"))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 10 version"],
+        grid: true,
+      })
+    )
+    .pipe(dest("app/css"))
+    .pipe(browserSync.stream());
+}
+
+// сохранение проекта в папку dist
+
+function build() {
+  return src(
+    [
+      "app/css/**/*.css",
+      "app/fonts/**/*",
+      "app/js/**/*.js",
+      "app/**/*.html",
+      // "app/images/**/*.*"
+    ],
+    { base: "app" }
+  ).pipe(dest("dist"));
+}
+
+// отслеживание изменений в файлах scss, js(кроме !main.min.js), html и обновление страницы
+
+function watching() {
+  watch(["app/scss/**/*.scss"], styles);
+  watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
+  watch(["app/*.html"]).on("change", browserSync.reload);
+}
+
+exports.styles = styles;
+exports.watching = watching;
+exports.browsersync = browsersync;
+exports.scripts = scripts;
+exports.images = images;
+exports.clean = clean;
+
+exports.build = series(clean,  build, images);
+exports.default = parallel(styles, scripts, browsersync, watching);
