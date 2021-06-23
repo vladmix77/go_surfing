@@ -15,6 +15,8 @@ function browsersync() {
     server: {
       baseDir: "app/",
     },
+    browser: 'chromium',
+    // browser: 'firefox',
   });
 }
 
@@ -107,5 +109,5 @@ exports.scripts = scripts;
 exports.images = images;
 exports.clean = clean;
 
-exports.build = series(clean,  build, images);
+exports.build = series(clean, images, build, );
 exports.default = parallel(styles, scripts, browsersync, watching);
