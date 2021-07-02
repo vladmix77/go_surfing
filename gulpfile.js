@@ -15,7 +15,8 @@ function browsersync() {
     server: {
       baseDir: "app/",
     },
-    browser: 'chromium',
+    browser: 'chrome',
+    // browser: 'chromium',
     // browser: 'firefox',
   });
 }
