@@ -16,7 +16,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^4.1.1",
     "gulp-uglify-es": "^2.0.0",
     "http-proxy": "^1.18.1",
     "jquery": "^3.6.0",
@@ -28,8 +28,5 @@
     "browserslist": "^4.16.6",
     "caniuse-lite": "^1.0.30001154",
     "slick-carousel": "^1.8.1"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.1.3"
   }
 }
